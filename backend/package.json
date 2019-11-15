@@ -10,7 +10,8 @@
   "author": "Helder Burato Berto <helder.burato@gmail.com> (https://helder.dev/)",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.7.11"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
