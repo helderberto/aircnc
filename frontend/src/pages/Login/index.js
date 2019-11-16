@@ -30,7 +30,7 @@ function Login({ history }) {
       </p>
 
       <form onSubmit={handleSubmit}>
-        <label htmlFor="email">E-mail *</label>
+        <label htmlFor="email">E-MAIL *</label>
         <input
           type="email"
           id="email"

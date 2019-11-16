@@ -57,7 +57,12 @@ button {
   color: #444;
   font-weight: bold;
   margin-bottom: 8px;
-  text-transform: uppercase;
+}
+
+.content label span {
+  font-weight: normal;
+  color: #999;
+  font-size: 12px;
 }
 
 .content form input {
