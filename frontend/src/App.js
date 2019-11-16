@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+import api from "./services/api";
 import "./App.css";
 
 import logo from "./assets/logo.svg";
 
 function App() {
+  const [email, setEmail] = useState("");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    const response = await api.post("/sessions", { email });
+
+    const { _id } = response.data;
+
+    if (_id) {
+      localStorage.setItem("user", _id);
+    }
+  }
+
+  function handleEmailChange(event) {
+    setEmail(event.target.value);
+  }
+
   return (
     <div className="container">
       <img src={logo} alt="AirCnC" />
@@ -14,9 +33,15 @@ function App() {
           <strong>talentos</strong> para sua empresa.
         </p>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <label htmlFor="email">E-mail *</label>
-          <input type="email" id="email" palceholder="Seu melhor e-mail" />
+          <input
+            type="email"
+            id="email"
+            placeholder="Seu melhor e-mail"
+            value={email}
+            onChange={handleEmailChange}
+          />
 
           <button className="btn" type="submit">
             Entrar
